@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en" dir="ltr")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Portfolio Site
+    link(href='https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,800', rel='stylesheet')
+    link(rel='stylesheet', href='/static/css/normalize.css')
+    link(rel='stylesheet', href='/static/css/styles.css')
+
+  body
+    #my-info.sidebar
+      .sidebar-info-box
+        br
+        .thumbnail-box
+          img.thumbnail(src='/static/images/rsz_profile_picture(1).jpg', alt='')
+        .dev-intro-box
+
+          //- My name
+          h5 Payton Curry
+
+          //- Personal Description
+          p Hi! My name is Payton Curry. I am from Haughton, Lousiana. My hobbies include working at SRP Environmental as a Junior Software Engineer (in training),hanging out with friends and spoiling my fur baby Conway Earl Bocephus.
+
+          //- Added path from my '/about' route handler to the href below
+          a(href=`/about`) Learn More &rarr;
+
+    .wrapper
+      .header
+        .header-info-box
+          button#menu-icon.menu-icon(type='button' data-toggle='my-info')
+
+          //- My name — this is for the mobile layout
+          span Payton Curry
+
+      block content
+
+  script(src='/static/js/script.js')

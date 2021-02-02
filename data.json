@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "project_name": "Phrase Hunter",
+      "description": "The object of the game is to choose the correct letter of the phrase provided. If wrong letter is chosen then lives begin to go away until all lives are completely erased. If you successfully get through a phrase with all or some lives left you win the game.",
+      "technologies": ["HTML", "Javascript"],
+      "live_link": "https://paytonmillee.github.io/Treehouse-Project-4-OOP-Game/",
+      "github_link": "https://github.com/paytonmillee/Treehouse-Project-4-OOP-Game",
+      "image_urls": [
+        "/static/images/rsz_project_4.png",
+        "/static/images/Project_42PNG.jpg"
+      ]
+    },
+    {
+      "id": 1,
+      "project_name": "Request API",
+      "description": "Project 5 this project generates a employee page by the link provided in the html and Random User Generator API link provided in the instructions. The page allows you to go through each of the 12 employees displayed and see their individual contact information by clicking on the specific card of your choice.S",
+      "technologies": ["HTML", "JavaScript", "JQuery", "API"],
+      "live_link": "https://paytonmillee.github.io/Project-5/",
+      "github_link": "https://github.com/paytonmillee/Project-5",
+      "image_urls": [
+        "/static/images/rsz_project_5.png",
+        "/static/images/Project_5_2PNG.jpg"
+      ]
+    },
+
+    {
+      "id": 2,
+      "project_name": "Random Quote Generator",
+      "description": "The project allows the users to click a button on the screen to provide (call the function) them with a quote in random order each and every time the button is pressed.",
+      "technologies": ["HTML", "JavaScript"],
+      "live_link": "https://paytonmillee.github.io/Treehouse-Project-1/",
+      "github_link": "https://github.com/paytonmillee/Treehouse-Project-1",
+      "image_urls": [
+        "/static/images/rsz_project_1.png",
+        "/static/images/Project_1_2PNG.jpg"
+      ]
+    }
+  ]
+}

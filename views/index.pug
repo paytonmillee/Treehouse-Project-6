@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    //- Heading for my Portfolie Page 
+    h1 Welcome to Payton's Portfolio
+
+    //- Description of my portfolie and my accomplishments 
+    p This portfolio contains the projects I have completed thus far. It will show my growth throughout my learning experiences in JavaScript and the success I have had in completing the projects. Having barely any experience with computers in the beginning, I would have to say my growth technologically has improved and I hope prospecting employers will see as such. It has been a fun journey and I can not wait to grow my portfolio even more in the years to come. 
+
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      //- Used the Pug `each` iterator to loop over the projects in my data file  
+      each project in projects
+        //- Used interpolated template literals as needed to dynamically generate the paths in the link's href and img's src attributes, used interpoolation for the thumbnail with the projects title and project title
+          
+        .cell
+          a(href=`/project/${project.id}`)
+            img.thumbnail(src=project.image_urls[0], alt='')
+            h5=project.project_name
+
