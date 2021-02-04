@@ -36,6 +36,30 @@
         "/static/images/rsz_project_1.png",
         "/static/images/Project_1_2PNG.jpg"
       ]
+    },
+    {
+      "id": 3,
+      "project_name": "Data Pagination and Filtering",
+      "description": "This project displays pages of the student data in allowing users to search by student name.",
+      "technologies": ["HTML", "JavaScript", "CSS"],
+      "live_link": "https://paytonmillee.github.io/Treehouse-Unit-2/",
+      "github_link": "https://github.com/paytonmillee/Treehouse-Unit-2",
+      "image_urls": [
+        "/static/images/rsz_project_2.png",
+        "/static/images/rsz_project_22.png"
+      ]
+    },
+    {
+      "id": 4,
+      "project_name": "Interactive Form",
+      "description": "This project involves creating a form that is accessible friendly. Giving each user the opportunity to understand what fields are needed to complete the form.",
+      "technologies": ["HTML", "JavaScript", "CSS"],
+      "live_link": "https://paytonmillee.github.io/Treehouse-Project-3-Interactive-Form-/",
+      "github_link": "https://github.com/paytonmillee/Treehouse-Project-3-Interactive-Form-",
+      "image_urls": [
+        "/static/images/rsz_project_3.png",
+        "/static/images/rsz_project_32.png"
+      ]
     }
   ]
 }

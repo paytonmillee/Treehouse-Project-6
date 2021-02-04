@@ -46,6 +46,7 @@ app.use((err, req, res, next) => {
   if (!err.status) {
     err.status = 500;
   }
+  console.error("Error message:", err.message, "Error status:", err.status);
   res.locals.error = err;
   res.status(err.status);
   res.render("error");
