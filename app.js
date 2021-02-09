@@ -29,27 +29,25 @@ app.get("/project/:id", (req, res, next) => {
     }
   });
   if (project) {
+    console.log("Project found");
     res.locals.project = project;
     res.render("project");
   } else {
-    next();
+    //Getting the application to show an error if page or route isn't able to be found
+    const err = new Error("Not Found");
+    err.status = 404;
+    next(err);
   }
 });
-//Getting the application to show an error if page or route isn't able to be found
-app.use((req, res, next) => {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
+
 //Getting the application we are wanting to display an error page if one has occured
 app.use((err, req, res, next) => {
-  if (!err.status) {
-    err.status = 500;
+  if (err) {
+    console.error("Error message:", err.message, "Error status:", err.status);
+    res.locals.error = err;
+    res.status(err.status);
+    res.render("error");
   }
-  console.error("Error message:", err.message, "Error status:", err.status);
-  res.locals.error = err;
-  res.status(err.status);
-  res.render("error");
 });
 //Getting application to run on port
 app.listen(port, () => {
