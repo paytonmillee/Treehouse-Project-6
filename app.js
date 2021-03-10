@@ -1,55 +1,66 @@
 //making our application know we are using express
-
 const express = require("express");
 const data = require("./data.json");
-
 const app = express();
-const port = 3000;
+
 //Getting the application to use the pug templating engine
 app.set("view engine", "pug");
 //Getting the application to use a static folder
 app.use("/static", express.static("public"));
+
 //Requesting portfolio's index
 app.get("/", (req, res) => {
   res.locals.projects = data.projects;
+
   res.render("index");
 });
-//Requesting portfolio'sS about
+
+//Requesting portfolio's about
 app.get("/about", (req, res) => {
   res.render("about");
 });
-//Getting the application to run the routes we have requested
+
+//Getting the application to return a requested project
 app.get("/project/:id", (req, res, next) => {
-  const id = req.params.id;
-  let project;
+  let id = req.params.id;
+  let project = null;
   data.projects.map((projectData) => {
-    if (id == projectData.id) {
+    if (projectData.id == id) {
       project = projectData;
-      console.log(projectData);
     }
   });
+
   if (project) {
-    console.log("Project found");
     res.locals.project = project;
     res.render("project");
   } else {
-    //Getting the application to show an error if page or route isn't able to be found
-    const err = new Error("Not Found");
-    err.status = 404;
-    next(err);
+    next();
   }
 });
 
-//Getting the application we are wanting to display an error page if one has occured
-app.use((err, req, res, next) => {
-  if (err) {
-    console.error("Error message:", err.message, "Error status:", err.status);
-    res.locals.error = err;
-    res.status(err.status);
-    res.render("error");
-  }
+// 404 Error Handler
+
+app.use((req, res, next) => {
+  const error = new Error("Page not found.");
+  error.status = 404;
+  console.log(`${error.message} status code: ${error.status}`);
+  res.locals.error = error;
+  res.render("error");
+  next();
 });
-//Getting application to run on port
+
+//Global Error Handler
+
+app.use((err, req, res, next) => {
+  if (!err.status) {
+    err.status = 500;
+  }
+  console.log(`${err.message} status code: ${err.status}`);
+  res.locals.error = err;
+  res.render("error");
+});
+
+let port = 3000;
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${3000}`);
+  console.log(`now listening on port ${port}`);
 });

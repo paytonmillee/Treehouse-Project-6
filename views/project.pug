@@ -14,10 +14,10 @@ block content
         
 
         //-Using interpolation to dynamically add the project title
-        h1=project.project_name
+        h1= project.project_name
 
         //- Using interpolation to dynamically add the project description
-        p=project.description
+        p= project.description
 
       .project-tech-links-box.box
         h6 Technologies
@@ -26,7 +26,7 @@ block content
 
           //- Using an `each` iterator and interpolation to replace the li tags below and add the technologies listed for this project
           each technology in project.technologies
-            li=technology
+            li= technology
          
 
         //-using template literals and interpolation to add the appropriate URLs to the hrefs so that they could link to the git hub repo and live version of the selected project 
@@ -36,7 +36,7 @@ block content
     .project-img-box.box
       //- Replacing the URLs in the src attributes below with interpolated template literals to dynamically add your amount of project images
       each image in project.image_urls
-        img.project-img(src=`${image}`, alt='project image')
+        img.project-img(src=image, alt='project image')
 
     nav.nav
       a(href='/')
